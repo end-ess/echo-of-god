@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>神格图鉴 · 神之回响 The Echo of God</title>
+<meta name="description" content="神之回响神格图鉴：神域、北境、提坦、中原、深渊五大神系。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&amp;family=Noto+Serif+SC:wght@500;700;900&amp;family=Noto+Sans+SC:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="home.css">
+</head>
+<body>
+<header class="top"><div class="wrap">
+<a class="brand" href="./"><b>神之回响</b><span>THE ECHO OF GOD</span></a>
+<nav class="main" aria-label="主导航"><a href="./#factions">神系</a><a href="./#gods">众神</a><a href="./#modes">玩法</a><a href="./#skins">皮肤</a><a class="on" href="gods.html" aria-current="page">神格图鉴</a></nav>
+<a class="btn gold" href="./#soon">即将上线</a>
+</div></header>
+<main class="wrap" style="padding-top:48px;padding-bottom:40px">
+<div style="display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:24px">
+<div><h1 class="serif" style="margin:0;font-size:44px;letter-spacing:8px">神格图鉴</h1><div style="color:var(--muted);margin-top:8px">游戏里共 108 位神格 · 网站先展示 <span id="shown">10</span> 位，陆续补全</div></div>
+<label class="search">搜索<input id="q" type="search" placeholder="神格名字"></label>
+</div>
+<div class="tabs" role="tablist" aria-label="按神系筛选" id="tabs"></div>
+<div style="display:flex;flex-wrap:wrap;gap:28px;align-items:flex-start">
+<div class="godlist" id="list"></div>
+<aside class="detail" aria-label="神格详情" aria-live="polite">
+<img id="dimg" src="img/poster_chaos.webp" alt="">
+<div class="txt">
+<div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap"><span class="nm" id="dname">卡俄斯</span><span class="cinzel" style="font-size:13px;letter-spacing:2px;color:var(--gold)" id="den">CHAOS</span></div>
+<span class="tag" id="dfac">神域</span>
+<p style="margin:4px 0 0;color:var(--muted);font-size:14px;line-height:1.7">技能、定位、台词和皮肤会在游戏上线前补到这里。</p>
+</div>
+</aside>
+</div>
+</main>
+<footer><div class="wrap">
+<div style="display:flex;flex-direction:column;gap:4px"><span class="serif" style="color:var(--ink);font-size:18px;letter-spacing:3px">神之回响 <span class="cinzel" style="font-size:12px;color:var(--gold)">THE ECHO OF GOD</span></span><span>© 2026 endless</span></div>
+<nav aria-label="页脚"><a href="privacy.html">隐私政策 / Privacy</a><a href="terms.html">用户协议 / Terms</a><a href="delete-account.html">删除账号和数据</a></nav>
+</div></footer>
+<script>
+(function(){
+ var G=[
+  {k:'chaos',name:'卡俄斯',en:'CHAOS',f:'神域'},{k:'hera',name:'赫拉',en:'HERA',f:'神域'},{k:'persephone',name:'珀耳塞福涅',en:'PERSEPHONE',f:'神域'},{k:'selene',name:'塞勒涅',en:'SELENE',f:'神域'},
+  {k:'brunhild',name:'布伦希尔德',en:'BRUNHILD',f:'北境'},{k:'skadi',name:'斯卡蒂',en:'SKADI',f:'北境'},{k:'atlas',name:'阿特拉斯',en:'ATLAS',f:'提坦'},
+  {k:'wukong',name:'孙悟空',en:'WUKONG',f:'中原'},{k:'nezha',name:'哪吒',en:'NEZHA',f:'中原'},{k:'yogsothoth',name:'犹格·索托斯',en:'YOG-SOTHOTH',f:'深渊'}];
+ var T=['全部','神域','北境','提坦','中原','深渊'],tab=0,pick=G[0].k;
+ var p=new URLSearchParams(location.search).get('f');if(p&&T.indexOf(p)>0)tab=T.indexOf(p);
+ var h=location.hash.slice(1);if(G.some(function(g){return g.k===h;}))pick=h;
+ var tabs=document.getElementById('tabs'),list=document.getElementById('list'),q=document.getElementById('q');
+ T.forEach(function(t,i){var b=document.createElement('button');b.type='button';b.className='tab';b.setAttribute('role','tab');b.textContent=t;b.onclick=function(){tab=i;render();};tabs.appendChild(b);});
+ function detail(){var g=G.filter(function(x){return x.k===pick;})[0];document.getElementById('dimg').src='img/poster_'+g.k+'.webp';document.getElementById('dimg').alt=g.name;
+  document.getElementById('dname').textContent=g.name;document.getElementById('den').textContent=g.en;document.getElementById('dfac').textContent=g.f;}
+ function render(){
+  [].forEach.call(tabs.children,function(b,j){b.setAttribute('aria-selected',j===tab?'true':'false');});
+  var s=(q.value||'').trim();list.innerHTML='';var n=0;
+  G.forEach(function(g){if(tab>0&&g.f!==T[tab])return;if(s&&g.name.indexOf(s)<0&&g.en.toLowerCase().indexOf(s.toLowerCase())<0)return;n++;
+   var b=document.createElement('button');b.type='button';b.className='godbtn';b.setAttribute('aria-pressed',g.k===pick?'true':'false');
+   b.innerHTML='<img src="img/poster_'+g.k+'.webp" alt="" loading="lazy"><span><b>'+g.name+'</b><i>'+g.f+'</i></span>';
+   b.onclick=function(){pick=g.k;history.replaceState(null,'','#'+g.k);render();if(window.innerWidth<900)document.querySelector('.detail').scrollIntoView({behavior:'smooth'});};list.appendChild(b);});
+  if(!n)list.innerHTML='<p style="color:var(--muted)">没有找到这位神格。</p>';
+  document.getElementById('shown').textContent=n;detail();}
+ q.addEventListener('input',render);render();
+})();
+</script>
+</body>
+</html>
