@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gods · The Echo of God</title>
+<meta name="description" content="Every god in The Echo of God — Divine, North, Titan, Central and Abyss — with skills, roles and quotes.">
+<link rel="canonical" href="https://end-ess.github.io/echo-of-god/en/gods.html">
+<link rel="alternate" hreflang="zh-CN" href="https://end-ess.github.io/echo-of-god/gods.html">
+<link rel="alternate" hreflang="zh-TW" href="https://end-ess.github.io/echo-of-god/tw/gods.html">
+<link rel="alternate" hreflang="ja" href="https://end-ess.github.io/echo-of-god/ja/gods.html">
+<link rel="alternate" hreflang="en" href="https://end-ess.github.io/echo-of-god/en/gods.html">
+<link rel="alternate" hreflang="x-default" href="https://end-ess.github.io/echo-of-god/gods.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="The Echo of God">
+<meta property="og:title" content="Gods · The Echo of God">
+<meta property="og:description" content="Every god in The Echo of God — Divine, North, Titan, Central and Abyss — with skills, roles and quotes.">
+<meta property="og:url" content="https://end-ess.github.io/echo-of-god/en/gods.html">
+<meta property="og:image" content="https://end-ess.github.io/echo-of-god/og-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://end-ess.github.io/echo-of-god/og-cover.jpg">
+<meta name="theme-color" content="#F4EFE4">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="../icon-192.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="alternate" type="application/rss+xml" title="The Echo of God" href="https://end-ess.github.io/echo-of-god/feed.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&amp;family=Noto+Serif+SC:wght@500;700;900&amp;family=Noto+Sans+SC:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../home.css">
+</head>
+<body><a class="sr" href="#main">Skip to content</a>
+<header class="top"><div class="wrap">
+<a class="brand" href="./"><b style="font-family:Cinzel,serif;letter-spacing:2px;font-size:20px">THE ECHO OF GOD</b><span>神之回响</span></a>
+<nav class="main" aria-label="Main"><a href="./#factions">Pantheons</a><a href="./#gods">Gods</a><a href="./#modes">Modes</a><a href="news.html">News</a><a href="gods.html" class="on" aria-current="page">God Library</a></nav>
+<nav class="lang" aria-label="Language"><a href="../gods.html" lang="zh-CN">简体</a><a href="../tw/gods.html" lang="zh-TW">繁體</a><a href="../ja/gods.html" lang="ja">日本語</a><a href="../en/gods.html" lang="en" aria-current="true">EN</a></nav>
+<a class="btn gold" href="./#soon">Coming soon</a>
+</div></header>
+<main id="main" class="wrap" style="padding-top:48px;padding-bottom:40px">
+<div style="display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:24px">
+<div><h1 class="serif" style="margin:0;font-size:44px;letter-spacing:2px">God Library</h1><div style="color:var(--muted);margin-top:8px">All 102 gods in the game (summons not included) · showing <span id="shown">102</span></div></div>
+<label class="search">Search<input id="q" type="search" placeholder="God name" autocomplete="off"></label>
+</div>
+<div class="tabs" role="tablist" aria-label="Five Pantheons" id="tabs"></div>
+<div class="roles" id="roles" aria-label="All roles"></div>
+<div style="display:flex;flex-wrap:wrap;gap:28px;align-items:flex-start">
+<div class="godlist" id="list"></div>
+<aside class="detail" aria-label="God Library" aria-live="polite">
+<img id="dimg" src="" alt="">
+<div class="txt">
+<div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap"><span class="nm" id="dname"></span><span class="cinzel" style="font-size:13px;letter-spacing:2px;color:var(--gold)" id="den"></span></div>
+<div class="tags" id="dtags"></div>
+<div class="stats" id="dstats"></div>
+<div class="lbl">Skills</div><p class="skill" id="dskill"></p>
+<div class="lbl" id="dql">Quote</div><p class="quote" id="dquote"></p>
+<a id="downpage" href="#" style="font-size:14px">Own page →</a>
+<p style="margin:6px 0 0;color:var(--muted);font-size:12px">Skills and stats come from the current test build and may change before launch.</p>
+</div>
+</aside>
+</div>
+</main>
+<footer><div class="wrap">
+<div style="display:flex;flex-direction:column;gap:4px"><span class="serif" style="color:var(--ink);font-size:18px;letter-spacing:3px">神之回响 <span class="cinzel" style="font-size:12px;color:var(--gold)">THE ECHO OF GOD</span></span><span>© 2026 endless · <span data-mail>end1essenly [at] gmail.com</span></span></div>
+<nav aria-label="Footer"><a href="../privacy.html">Privacy Policy</a><a href="../terms.html">Terms of Service</a><a href="../delete-account.html">Delete account and data</a><a href="press.html">Press Kit</a><a href="https://end-ess.github.io/echo-of-god/feed.xml">RSS</a></nav>
+</div></footer>
+<script src="../site.js"></script>
+<script src="../data/gods.js"></script>
+<script>
+(function(){
+ var LANG='en',P='../',G=window.GODS||[],FAC=[["divine", "Divine"], ["north", "North"], ["titan", "Titan"], ["central", "Central"], ["abyss", "Abyss"]],ST=["HP", "DMG", "RNG", "SPD", "COST"];
+ var FK={"神域": "divine", "北境": "north", "提坦": "titan", "中原": "central", "深渊": "abyss"};
+ var tab='all',role='',pick=G.length?G[0].s:'';
+ var qp=new URLSearchParams(location.search).get('f');if(qp&&FAC.some(function(f){return f[0]===qp;}))tab=qp;
+ var h=decodeURIComponent(location.hash.slice(1));if(G.some(function(g){return g.s===h;}))pick=h;
+ var tabs=document.getElementById('tabs'),list=document.getElementById('list'),q=document.getElementById('q'),roles=document.getElementById('roles');
+ function L(g){return g[LANG];}
+ [['all','All']].concat(FAC).forEach(function(f){var b=document.createElement('button');b.type='button';b.className='tab';b.setAttribute('role','tab');b.textContent=f[1];b.dataset.k=f[0];b.onclick=function(){tab=f[0];render();};tabs.appendChild(b);});
+ var ORD=['终端','输出','承伤','推进','防守','辅助','铺场','控制','支援','后排','前排'],MAP={};G.forEach(function(g){g.zh.r.forEach(function(r,i){MAP[r]=L(g).r[i]||r;});});
+ var RS=ORD.filter(function(r){return MAP[r];}).map(function(r){return MAP[r];});
+ [''].concat(RS).forEach(function(r){var b=document.createElement('button');b.type='button';b.textContent=r||'All roles';b.onclick=function(){role=r;render();};b.dataset.r=r;roles.appendChild(b);});
+ function facName(g){return g.f.map(function(f){for(var i=0;i<FAC.length;i++)if(FAC[i][0]===FK[f])return FAC[i][1];return f;}).join(' · ');}
+ function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e;}
+ function detail(){var g=G.filter(function(x){return x.s===pick;})[0];if(!g)return;var d=L(g);
+  var im=document.getElementById('dimg');im.src=P+'img/gods/'+g.s+'.webp';im.alt=d.n;
+  document.getElementById('dname').textContent=d.n;document.getElementById('den').textContent=LANG==='en'?'':g.en.n.toUpperCase();
+  var tg=document.getElementById('dtags');tg.innerHTML='';tg.appendChild(el('span','tag',facName(g)));d.r.forEach(function(r){var s=el('span','tag',r);s.style.borderColor='var(--line2)';s.style.color='var(--muted)';tg.appendChild(s);});
+  var st=document.getElementById('dstats');st.innerHTML='';for(var i=0;i<5;i++){var c=el('div');var v=g.st[i];c.appendChild(el('b',null,v>=1e8?'∞':String(v)));c.appendChild(el('span',null,ST[i]));st.appendChild(c);}
+  document.getElementById('dskill').textContent=d.t||'';
+  var qt=document.getElementById('dquote'),ql=document.getElementById('dql');qt.textContent=d.q?(LANG==='en'?'“'+d.q+'”':'「'+d.q+'」'):'';qt.hidden=ql.hidden=!d.q;
+  var op=document.getElementById('downpage');if(op)op.href='gods/'+g.s+'.html';}
+ function render(){
+  [].forEach.call(tabs.children,function(b){b.setAttribute('aria-selected',b.dataset.k===tab?'true':'false');});
+  [].forEach.call(roles.children,function(b){b.setAttribute('aria-pressed',b.dataset.r===role?'true':'false');});
+  var s=(q.value||'').trim().toLowerCase();list.innerHTML='';var n=0,first=null,still=false;
+  G.forEach(function(g){var d=L(g);if(tab!=='all'&&!g.f.some(function(f){return FK[f]===tab;}))return;if(role&&d.r.indexOf(role)<0)return;
+   if(s&&[g.zh.n,g.tw.n,g.ja.n,g.en.n].join('|').toLowerCase().indexOf(s)<0)return;n++;if(!first)first=g.s;if(g.s===pick)still=true;
+   var b=document.createElement('button');b.type='button';b.className='godbtn';b.setAttribute('aria-pressed',g.s===pick?'true':'false');
+   var im=el('img');im.src=P+'img/gods/'+g.s+'.webp';im.alt='';im.loading='lazy';b.appendChild(im);
+   var sp=el('span');sp.appendChild(el('b',null,d.n));sp.appendChild(el('i',null,facName(g)));b.appendChild(sp);
+   b.onclick=function(){pick=g.s;history.replaceState(null,'','#'+g.s);render();if(window.innerWidth<900)document.querySelector('.detail').scrollIntoView({behavior:'smooth'});};list.appendChild(b);});
+  if(!n)list.appendChild(el('p',null,'No god matches.'));
+  if(!still&&first){pick=first;if(list.firstChild&&list.firstChild.setAttribute)list.firstChild.setAttribute('aria-pressed','true');}
+  document.getElementById('shown').textContent=n;detail();}
+ q.addEventListener('input',render);render();
+})();
+</script>
+</body>
+</html>
